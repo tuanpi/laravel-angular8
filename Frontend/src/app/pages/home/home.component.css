@@ -1,0 +1,32 @@
+/*--------------------------------------------------
+* @project PHP
+* @file    .../home/home.component.css
+* --------------------------------------------------
+* @Date:   2020-08-02 09:44:45
+* @Author: Phan Huu Tuan | pi.huutuan@gmail.com
+* 
+* @Last Modified by:   Phan Huu Tuan
+* @Last Modified time: 2020-08-02 10:41:23
+* --------------------------------------------------*/
+
+.btn-marigin-left {
+  margin-left: 20px;
+}
+
+.btn.btn-info[disabled] {
+  background-color: #DDD;
+}
+
+.btn-pi {
+  border: none;
+  border-radius: 3px;
+  position: relative;
+  padding: 12px 30px;
+  margin: 10px 1px;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  will-change: box-shadow, transform;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}

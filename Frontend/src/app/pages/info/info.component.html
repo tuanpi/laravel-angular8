@@ -1,0 +1,45 @@
+<!-- Big container -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="wizard-container">
+        <div class="card wizard-card" data-color="orange" id="wizard">
+        <app-header [props]="props"></app-header>
+        <div class="tab-content">
+          <div class="row" *ngFor="let result of results; index as i">
+            <div class="col-sm-9">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
+                <div class="form-group label-floating">
+                  <input disabled name="name" type="text" class="form-control" value="{{result.message}}">
+                </div>
+              </div>
+            </div>
+            <button [disabled]="!result.message.length ? 'null': disabled" class="btn btn-info btn-marigin-left" data-toggle="modal" data-target="#showDataModal" (click)="getData(result.id)">Approved {{i + 1}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="showDataModal" tabindex="-1" role="dialog" aria-labelledby="showDataModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="submitModalLabel">Approved {{itemResult.id}}</h5>
+      </div>
+      <div class="modal-body">
+        Content: "{{itemResult.message}}"
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div> <!--  big container -->
+<router-outlet></router-outlet>

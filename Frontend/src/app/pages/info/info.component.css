@@ -1,0 +1,14 @@
+/*--------------------------------------------------
+* @project PHP
+* @file    .../info/info.component.css
+* --------------------------------------------------
+* @Date:   2020-08-01 23:40:26
+* @Author: Phan Huu Tuan | pi.huutuan@gmail.com
+* 
+* @Last Modified by:   Phan Huu Tuan
+* @Last Modified time: 2020-08-02 11:18:39
+* --------------------------------------------------*/
+
+.btn.btn-info[disabled] {
+  background-color: #DDD;
+}

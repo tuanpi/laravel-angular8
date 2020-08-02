@@ -1,0 +1,7 @@
+<div class="wizard-header">
+  <div *ngIf="props.title=='Info page'" style="position:absolute;padding-left:15px;">
+    <a [routerLink]="['/home']"><i class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true" style="color:#888;"></i></a>
+  </div>
+  <h3 class="wizard-title">{{props.title}}</h3>
+  <h5>{{props.subTitle}}</h5>
+</div>

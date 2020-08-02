@@ -1,0 +1,47 @@
+<!-- Big container -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="wizard-container">
+        <div class="card wizard-card" data-color="orange" id="wizard">
+        <app-header [props]="props"></app-header>
+        <div class="tab-content">
+          <div class="row" *ngFor="let content of contents; index as i">
+            <div class="col-sm-9">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
+                <div class="form-group label-floating">
+                  <label class="control-label">{{content.placeholder}}</label>
+                  <input name="name" type="text" class="form-control" [(ngModel)]="content.message" (ngModelChange)="onCheckData(content.id)">
+                </div>
+              </div>
+            </div>
+            <button disabled={{content.disabledAction}} class="btn btn-info btn-marigin-left" data-toggle="modal" data-target="#submitModal" (click)="getDataSubmmit(content.id)">{{content.actionName}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="submitModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="submitModalLabel">{{dataSubmit.actionName}}</h5>
+      </div>
+      <div class="modal-body">
+        Message: "{{dataSubmit.message}}"
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-pi btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn-pi btn-info" data-dismiss="modal" [routerLink]="['/info']" (click)="goToInfo()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div> <!--  big container -->
+<router-outlet></router-outlet>
